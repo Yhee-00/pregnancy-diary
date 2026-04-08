@@ -25,7 +25,9 @@
 - Java 17 이상
 - Node.js 18 이상
 - MariaDB (실행 후 `pregnancy_diary` 데이터베이스 생성 필요)
-
+```bash
+  CREATE DATABASE pregnancy_diary CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+  ```
 ### 설치 및 실행
 
 ```bash
@@ -35,7 +37,15 @@ cd pregnancy-diary
 
 # 환경변수 설정
 cp .env.example .env
+
 # .env 파일을 열어 각 항목 입력
+
+# powershell에 적용(windows)
+Get-Content .env | ForEach-Object {
+  if ($_ -match '^([^#][^=]*)=(.*)$') {
+    [System.Environment]::SetEnvironmentVariable($matches[1], $matches[2])
+  }
+}
 
 # 백엔드 실행
 cd backend
