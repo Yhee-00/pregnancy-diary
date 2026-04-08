@@ -26,7 +26,7 @@ function DiaryWritePage() {
           setEntryId(existing.id);
           setExistingPhotoUrls(
             (existing.photoUrls || []).map(
-              (url) => `http://localhost:8080${url}`,
+              (url) => `http://localhost:8080/uploads/${url}`,
             ),
           );
         }
