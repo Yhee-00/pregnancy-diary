@@ -36,7 +36,7 @@ INSERT INTO `diary_entry` (`id`, `content`, `created_at`, `entry_date`, `title`,
 
 -- diary_photo
 INSERT INTO `diary_photo` (`file_path`, `diary_entry_id`) VALUES
-	('pregnancy.jfif', 2),
+	('pregnancy_1.jfif', 2),
     ('baby.png', 4),
     ('babyshower.jpg', 9),
     ('babyroom.jpg', 20),
