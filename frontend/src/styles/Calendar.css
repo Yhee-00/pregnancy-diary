@@ -1,0 +1,95 @@
+.calendar-container {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+}
+
+.calendar-nav button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #e8a0b0;
+  padding: 4px 8px;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.weekday {
+  font-size: 12px;
+  color: #999;
+  padding: 4px 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  grid-auto-rows: 80px;
+}
+
+.calendar-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.calendar-cell.in-range {
+  background: #fff0f3;
+}
+
+.calendar-cell.in-range:hover {
+  background: #ffd6e0;
+}
+
+.calendar-cell.out-range {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.calendar-cell.written {
+  background: #ffd6e0;
+}
+
+.calendar-cell.today .day-number {
+  background: #e8a0b0;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-number {
+  font-size: 13px;
+  color: #444;
+}
+
+.written-dot {
+  font-size: 6px;
+  color: #e8a0b0;
+  margin-top: 2px;
+}

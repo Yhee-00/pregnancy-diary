@@ -5,19 +5,25 @@ import com.oyh.pregnancydiary.dto.DiaryEntryResponseDto;
 import com.oyh.pregnancydiary.entity.DiaryEntry;
 import com.oyh.pregnancydiary.entity.Pregnancy;
 import com.oyh.pregnancydiary.repository.DiaryEntryRepository;
+import com.oyh.pregnancydiary.repository.DiaryPhotoRepository;
 import com.oyh.pregnancydiary.repository.PregnancyRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class DiaryEntryService {
+    @Value("${file.upload-dir")
+    private String uploadDir;
 
     private final DiaryEntryRepository diaryEntryRepository;
     private final PregnancyRepository pregnancyRepository;
+    private final DiaryPhotoRepository diaryPhotoRepository;
 
     public DiaryEntryResponseDto create(Long pregnancyId, DiaryEntryRequestDto dto) {
         Pregnancy pregnancy = pregnancyRepository.findById(pregnancyId)
@@ -54,7 +60,24 @@ public class DiaryEntryService {
         entry.setTitle(dto.getTitle());
         entry.setContent(dto.getContent());
 
-        return toResponseDto(entry);
+        if (dto.getDeletedPhotoUrls() != null) {
+            System.out.println("삭제할 URL 목록: " + dto.getDeletedPhotoUrls());
+            for (String photoUrl : dto.getDeletedPhotoUrls()) {
+                String fileName = photoUrl.replace("http://localhost:8080/uploads/", "");
+                System.out.println("찾는 파일명: " + fileName);
+                diaryPhotoRepository.findByFilePath(fileName).ifPresent(photo -> {
+                    System.out.println("DB에서 찾음: " + photo.getId());
+                    new File(uploadDir + "/" + photo.getFilePath()).delete();
+                    diaryPhotoRepository.delete(photo);
+                    diaryEntryRepository.flush();
+                    System.out.println("삭제 완료: " + photo.getId());
+                });
+            }
+        }
+
+        DiaryEntry updatedEntry = diaryEntryRepository.findById(entryId).get();
+
+        return toResponseDto(updatedEntry);
     }
 
     @Transactional

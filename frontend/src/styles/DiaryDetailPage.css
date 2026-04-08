@@ -1,0 +1,164 @@
+.detail-container {
+  max-width: none;
+  margin: 0 233px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-date {
+  font-size: 18px;
+  font-weight: bold;
+  color: #767575;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #e8a0b0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #fff0f3;
+  color: #e8a0b0;
+  border: 1px solid #e8a0b0;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: none;
+  color: #ccc;
+  border: 1px solid #eee;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.detail-body {
+  padding: 20px 20px;
+  flex: 1;
+}
+
+.ai-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+
+  background-color: #fdf5f6c6; /* 연한 핑크 */
+  border-left: 3px solid #f1c6cc;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  padding: 8px 12px;
+  margin: 12px 0;
+
+  font-size: 13px;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.ai-icon {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  color: #f59e0b;
+}
+
+.ai-text {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.ai-text p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.detail-title {
+  font-size: 18px;
+  color: #444;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.divider {
+  height: 1px;
+  background: #ededed;
+  margin: 12px 0;
+}
+
+.detail-content {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.detail-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 60px 20px;
+  gap: 20px;
+}
+
+.detail-empty p {
+  font-size: 16px;
+  color: #bbb;
+}
+
+.write-btn {
+  background: #e8a0b0;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.photo-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  margin-top: 16px;
+
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+
+.slider-image {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+
+  scroll-snap-align: start;
+}

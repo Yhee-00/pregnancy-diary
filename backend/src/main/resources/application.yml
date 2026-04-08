@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ${DB_URL:jdbc:mariadb://localhost:3306/pregnancy_diary?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&authPlugins=mysql_native_password}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:1234}
+    url: ${DB_URL:}
+    username: ${DB_USERNAME:}
+    password: ${DB_PASSWORD:}
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     hibernate:
@@ -15,11 +15,22 @@ spring:
     init:
       mode: always
       encoding: UTF-8
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 sweetbook:
   api:
     key: ${SWEETBOOK_API_KEY:}
     base-url: https://api-sandbox.sweetbook.com/v1
+
+file:
+  upload-dir: ${FILE_UPLOAD_DIR:./uploads}
+
+openai:
+  api:
+    key: ${OPENAI_API_KEY:}
 
 server:
   port: 8080

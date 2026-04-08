@@ -1,0 +1,88 @@
+.order-container {
+  /* max-width: 480px; */
+  margin: 0 233px;
+  padding-bottom: 40px;
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.order-header h2 {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 0px;
+}
+
+.order-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-form h3 {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.order-form input {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  outline: none;
+  color: #444;
+}
+
+.order-form input:focus {
+  border-color: #e8a0b0;
+}
+
+.order-submit-btn {
+  background: #e8a0b0;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.order-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.order-success {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.order-success h2 {
+  font-size: 22px;
+  color: #e8a0b0;
+  margin-bottom: 16px;
+}
+
+.order-success p {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.order-success button {
+  margin-top: 24px;
+  background: #e8a0b0;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}

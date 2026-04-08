@@ -1,0 +1,72 @@
+.main-container {
+  /* max-width: 480px; */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-header h1 {
+  font-size: 22px;
+  color: #e8a0b0;
+  margin-bottom: 4px;
+}
+
+.due-date {
+  color: #999;
+  font-size: 14px;
+}
+
+.progress-section {
+  margin-bottom: 20px;
+}
+
+.progress-section p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  background: #f0f0f0;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: #e8a0b0;
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.action-buttons {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.order-btn {
+  background: #e8a0b0;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.order-btn:hover {
+  background: #d4849a;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
