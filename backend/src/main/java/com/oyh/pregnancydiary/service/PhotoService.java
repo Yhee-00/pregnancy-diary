@@ -43,7 +43,7 @@ public class PhotoService {
                 .build();
         diaryPhotoRepository.save(photo);
 
-        return "/uploads/" + filename;
+        return filename;
     }
 
 

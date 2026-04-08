@@ -36,10 +36,10 @@ INSERT INTO `diary_entry` (`id`, `content`, `created_at`, `entry_date`, `title`,
 
 -- diary_photo
 INSERT INTO `diary_photo` (`file_path`, `diary_entry_id`) VALUES
-	('/uploads/pregnancy.jfif', 2),
-    ('/uploads/baby.png', 4),
-    ('/uploads/babyshower.jpg', 9),
-    ('/uploads/babyroom.jpg', 20),
-    ('/uploads/babyclothe.jpg', 10),
-    ('/uploads/babything.jpg', 10);
+	('pregnancy.jfif', 2),
+    ('baby.png', 4),
+    ('babyshower.jpg', 9),
+    ('babyroom.jpg', 20),
+    ('babyclothe.jpg', 10),
+    ('babything.jpg', 10);
 
