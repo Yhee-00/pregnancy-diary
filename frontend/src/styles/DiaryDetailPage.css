@@ -95,6 +95,11 @@
   line-height: 1.5;
 }
 
+.ai-loading {
+  opacity: 0.6;
+  font-style: italic;
+}
+
 .detail-title {
   font-size: 18px;
   color: #444;

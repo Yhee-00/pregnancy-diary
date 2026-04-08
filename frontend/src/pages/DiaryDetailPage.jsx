@@ -11,6 +11,7 @@ function DiaryDetailPage() {
   const [entry, setEntry] = useState(null);
   const [loading, setLoading] = useState(true);
   const [aiMessage, setAiMessage] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
 
   useEffect(() => {
     getDiaryList(1)
@@ -23,10 +24,18 @@ function DiaryDetailPage() {
 
   useEffect(() => {
     if (!date) return;
-
-    getAiMessage(1, date).then((res) => {
-      setAiMessage(res.data);
-    });
+    const fetchAi = async () => {
+      try {
+        setAiLoading(true);
+        const res = await getAiMessage(1, date);
+        setAiMessage(res.data);
+      } catch (e) {
+        setAiMessage("태교 메시지를 불러오지 못했어요");
+      } finally {
+        setAiLoading(false);
+      }
+    };
+    fetchAi();
   }, [date]);
 
   const handleDelete = async () => {
@@ -93,7 +102,11 @@ function DiaryDetailPage() {
             <Sparkles className="ai-icon" />
             오늘의 태교 한마디
           </div>
-          <p>{aiMessage}</p>
+          {aiLoading ? (
+            <p className="ai-loading">불러오는 중....</p>
+          ) : (
+            <p>{aiMessage}</p>
+          )}
         </div>
         <div className="divider" />
         <p className="detail-content">{entry.content}</p>

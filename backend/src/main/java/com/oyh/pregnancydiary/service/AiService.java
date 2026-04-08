@@ -19,7 +19,10 @@ public class AiService {
             .build();
 
     public String generateMessage(int week){
-        String prompt = "임신 " + week + "주차에 맞는 태교 문구를 2~3줄로 따뜻하게 작성해줘.";
+        String prompt =
+        "임신 " + week + "주차 태교 문구를 작성해줘. " +
+        "부모가 아이에게 말하는 따뜻한 말투로, '~해', '~하자' 형태의 자연스러운 한국어 한 문장으로만 작성해줘. " +
+        "설명 없이 문장만 출력해줘.";
 
         Map<String, Object> body = Map.of(
                 "model", "gpt-4o-mini",
