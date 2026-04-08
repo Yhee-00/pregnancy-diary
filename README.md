@@ -40,12 +40,15 @@ cp .env.example .env
 
 # .env 파일을 열어 각 항목 입력
 
-# powershell에 적용(windows)
+# Windows
 Get-Content .env | ForEach-Object {
   if ($_ -match '^([^#][^=]*)=(.*)$') {
     [System.Environment]::SetEnvironmentVariable($matches[1], $matches[2])
   }
 }
+
+# Mac / Linux
+set -a && source .env && set +a
 
 # 백엔드 실행
 cd backend
